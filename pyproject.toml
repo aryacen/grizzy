@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bybit-spot-grid"
+version = "0.1.0"
+description = "A safety-first spot grid bot for Bybit V5"
+requires-python = ">=3.10"
+dependencies = [
+  "pybit==5.16.0",
+  "python-dotenv>=1.0,<2",
+]
+
+[project.scripts]
+gridbot = "gridbot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["gridbot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
